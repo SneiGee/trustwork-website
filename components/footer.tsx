@@ -21,7 +21,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="/services"
+                  href="#"
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
                   Capacity Building
@@ -29,7 +29,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/services"
+                  href="#"
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
                   Research & Development
@@ -37,7 +37,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/services"
+                  href="#"
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
                   Management Consulting
@@ -60,7 +60,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/expertise"
+                  href="#"
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
                   Our Expertise
@@ -68,7 +68,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/contact"
+                  href="#"
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
                   Contact
