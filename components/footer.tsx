@@ -85,9 +85,13 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/20 pt-8">
+        <div className="border-t border-primary-foreground/20 pt-8 space-y-2">
           <p className="text-sm text-primary-foreground/80 text-center">
             &copy; {currentYear} TRUSTWORK Consulting Limited. All rights reserved.
+          </p>
+
+          <p className="text-sm text-primary-foreground/60 text-center">
+            Powered by <span className="font-semibold text-primary-foreground uppercase">Michael Schneider</span>
           </p>
         </div>
       </div>
