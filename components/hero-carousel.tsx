@@ -15,14 +15,14 @@ const slides = [
     id: 2,
     title: "Research & Development Excellence",
     subtitle: "Evidence-based solutions grounded in comprehensive research and analysis",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&h=700&fit=crop",
+    image: "https://res.cloudinary.com/schneider-tech-inc/image/upload/v1765154228/research-lab-800x450_fxymfv.webp",
     cta: "Explore Services",
   },
   {
     id: 3,
     title: "Institutional Capacity Building",
     subtitle: "Building stronger organizations through training, development, and strategic planning",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&h=700&fit=crop",
+    image: "https://res.cloudinary.com/schneider-tech-inc/image/upload/v1765154228/Institutional-Capacity-Building-Human-Resource-Development-_a7usoa.jpg",
     cta: "Discover Solutions",
   },
 ]

@@ -35,7 +35,7 @@ export function ShowcaseSection() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed"
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&h=800&fit=crop')",
+          backgroundImage: "url('https://res.cloudinary.com/schneider-tech-inc/image/upload/v1765154228/patent-analytics-blog-2025-sdg-960_rubemz.jpg')",
         }}
       >
         {/* Gradient Overlay */}
