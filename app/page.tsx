@@ -113,7 +113,7 @@ export default function Home() {
               </ul>
 
               <Link
-                href="/services"
+                href="#"
                 className="inline-block px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary/90 transition-colors"
               >
                 Explore All Services
@@ -150,7 +150,7 @@ export default function Home() {
             Let us help you achieve your strategic objectives through professional consulting and development services.
           </p>
           <Link
-            href="/contact"
+            href="#"
             className="inline-block px-8 py-3 bg-accent hover:bg-accent/90 text-accent-foreground font-semibold rounded-lg transition-colors"
           >
             Get in Touch
