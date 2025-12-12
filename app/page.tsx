@@ -113,7 +113,7 @@ export default function Home() {
               </ul>
 
               <Link
-                href="#"
+                href="/services"
                 className="inline-block px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary/90 transition-colors"
               >
                 Explore All Services
