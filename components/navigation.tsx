@@ -10,8 +10,8 @@ export function Navigation() {
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About Us" },
-    { href: "#", label: "Services" },
-    { href: "#", label: "Our Expertise" },
+    { href: "/services", label: "Services" },
+    { href: "/expertise", label: "Our Expertise" },
     { href: "#", label: "Contact" },
   ]
 
