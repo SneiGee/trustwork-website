@@ -150,7 +150,7 @@ export default function Home() {
             Let us help you achieve your strategic objectives through professional consulting and development services.
           </p>
           <Link
-            href="#"
+            href="/contact"
             className="inline-block px-8 py-3 bg-accent hover:bg-accent/90 text-accent-foreground font-semibold rounded-lg transition-colors"
           >
             Get in Touch

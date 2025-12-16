@@ -62,7 +62,7 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: "Phone",
-      details: "Available upon request",
+      details: "+233 20 577 7970 / +233 55 833 4770",
       description: "Contact our office for phone consultations",
     },
   ]

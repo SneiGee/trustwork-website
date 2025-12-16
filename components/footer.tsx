@@ -21,7 +21,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="#"
+                  href="/services"
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
                   Capacity Building
@@ -29,7 +29,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/services"
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
                   Research & Development
@@ -37,10 +37,18 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/services"
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
                   Management Consulting
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/training-courses"
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  Training Courses
                 </Link>
               </li>
             </ul>
@@ -60,7 +68,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/expertise"
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
                   Our Expertise
@@ -68,10 +76,18 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/contact"
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
                   Contact
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  Terms & Conditions
                 </Link>
               </li>
             </ul>
@@ -91,7 +107,9 @@ export function Footer() {
           </p>
 
           <p className="text-sm text-primary-foreground/60 text-center">
-            Powered by <span className="font-semibold text-primary-foreground uppercase">Michael Schneider</span>
+            Powered by <span className="font-semibold text-primary-foreground uppercase">
+              <Link href="https://linkedin.com/in/michael-schneider-708b49121/" target="_blank" >Michael Schneider</Link>
+            </span>
           </p>
         </div>
       </div>
