@@ -5,6 +5,7 @@ import type React from "react"
 import { useState } from "react"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
+import { ScrollReveal } from "@/components/scroll-reveal"
 import { Mail, Phone, MapPin, Send } from "lucide-react"
 
 export default function ContactPage() {
@@ -72,10 +73,12 @@ export default function ContactPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="bg-primary text-primary-foreground py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
-          <p className="text-xl text-primary-foreground/90 max-w-2xl">
+      <section className="relative w-screen left-1/2 right-1/2 -mx-[50vw] h-[400px] flex items-center justify-center">
+        <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/schneider-tech-inc/image/upload/v1766403206/OIP_16_sjkngx.webp')] bg-cover bg-center" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 to-primary/80" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">Contact Us</h1>
+          <p className="text-xl text-white/90 max-w-2xl mx-auto">
             Get in touch with our team to discuss your consulting needs and strategic objectives
           </p>
         </div>
@@ -88,15 +91,14 @@ export default function ContactPage() {
             {contactInfo.map((info, index) => {
               const Icon = info.icon
               return (
-                <div
-                  key={index}
-                  className="p-8 bg-card border border-border rounded-lg hover:shadow-lg transition-shadow"
-                >
-                  <Icon className="w-12 h-12 text-primary mb-4" />
-                  <h3 className="text-lg font-semibold mb-2">{info.title}</h3>
-                  <p className="font-bold text-primary mb-2">{info.details}</p>
-                  <p className="text-muted-foreground text-sm">{info.description}</p>
-                </div>
+                <ScrollReveal key={index} animation="slide-up" delay={index * 100}>
+                  <div className="p-8 bg-card border border-border rounded-lg hover:shadow-lg transition-shadow">
+                    <Icon className="w-12 h-12 text-primary mb-4" />
+                    <h3 className="text-lg font-semibold mb-2">{info.title}</h3>
+                    <p className="font-bold text-primary mb-2">{info.details}</p>
+                    <p className="text-muted-foreground text-sm">{info.description}</p>
+                  </div>
+                </ScrollReveal>
               )
             })}
           </div>
@@ -106,134 +108,140 @@ export default function ContactPage() {
       {/* Contact Form Section */}
       <section className="bg-muted py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-card border border-border rounded-lg p-8 md:p-12">
-            <h2 className="text-3xl font-bold mb-2">Send us a Message</h2>
-            <p className="text-muted-foreground mb-8">
-              Fill out the form below and our team will get back to you within 24 hours.
-            </p>
+          <ScrollReveal animation="scale">
+            <div className="bg-card border border-border rounded-lg p-8 md:p-12">
+              <h2 className="text-3xl font-bold mb-2">Send us a Message</h2>
+              <p className="text-muted-foreground mb-8">
+                Fill out the form below and our team will get back to you within 24 hours.
+              </p>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Name and Email */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Name and Email */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-semibold mb-2 text-foreground">Full Name *</label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
+                      placeholder="Your name"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-semibold mb-2 text-foreground">Email Address *</label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
+                      placeholder="your@email.com"
+                    />
+                  </div>
+                </div>
+
+                {/* Phone and Company */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-semibold mb-2 text-foreground">Phone Number</label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
+                      placeholder="+233 XXX XXX XXX"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-semibold mb-2 text-foreground">Company/Organization</label>
+                    <input
+                      type="text"
+                      name="company"
+                      value={formData.company}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
+                      placeholder="Your company name"
+                    />
+                  </div>
+                </div>
+
+                {/* Subject */}
                 <div>
-                  <label className="block text-sm font-semibold mb-2 text-foreground">Full Name *</label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
+                  <label className="block text-sm font-semibold mb-2 text-foreground">Subject *</label>
+                  <select
+                    name="subject"
+                    value={formData.subject}
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
-                    placeholder="Your name"
-                  />
+                  >
+                    <option value="">Select a subject</option>
+                    <option value="capacity-building">Capacity Building & Training</option>
+                    <option value="research">Research & Development</option>
+                    <option value="management">Management Consulting</option>
+                    <option value="planning">Planning Advisory Services</option>
+                    <option value="software">Software Development & IT</option>
+                    <option value="other">Other Inquiry</option>
+                  </select>
                 </div>
+
+                {/* Message */}
                 <div>
-                  <label className="block text-sm font-semibold mb-2 text-foreground">Email Address *</label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
+                  <label className="block text-sm font-semibold mb-2 text-foreground">Message *</label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
-                    placeholder="your@email.com"
+                    rows={6}
+                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors resize-none"
+                    placeholder="Tell us about your project or inquiry..."
                   />
                 </div>
-              </div>
 
-              {/* Phone and Company */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-semibold mb-2 text-foreground">Phone Number</label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
-                    placeholder="+233 XXX XXX XXX"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold mb-2 text-foreground">Company/Organization</label>
-                  <input
-                    type="text"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
-                    placeholder="Your company name"
-                  />
-                </div>
-              </div>
+                {/* Submit Status */}
+                {submitStatus === "success" && (
+                  <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
+                    <p className="text-green-800 font-medium">Thank you! Your message has been sent successfully.</p>
+                  </div>
+                )}
 
-              {/* Subject */}
-              <div>
-                <label className="block text-sm font-semibold mb-2 text-foreground">Subject *</label>
-                <select
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
+                {submitStatus === "error" && (
+                  <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+                    <p className="text-red-800 font-medium">
+                      There was an error sending your message. Please try again.
+                    </p>
+                  </div>
+                )}
+
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  disabled
+                  className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <option value="">Select a subject</option>
-                  <option value="capacity-building">Capacity Building & Training</option>
-                  <option value="research">Research & Development</option>
-                  <option value="management">Management Consulting</option>
-                  <option value="planning">Planning Advisory Services</option>
-                  <option value="software">Software Development & IT</option>
-                  <option value="other">Other Inquiry</option>
-                </select>
-              </div>
+                  <Send size={20} />
+                  {isSubmitting ? "Sending..." : "Send Message"}
+                </button>
 
-              {/* Message */}
-              <div>
-                <label className="block text-sm font-semibold mb-2 text-foreground">Message *</label>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={6}
-                  className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors resize-none"
-                  placeholder="Tell us about your project or inquiry..."
-                />
-              </div>
-
-              {/* Submit Status */}
-              {submitStatus === "success" && (
-                <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
-                  <p className="text-green-800 font-medium">Thank you! Your message has been sent successfully.</p>
-                </div>
-              )}
-
-              {submitStatus === "error" && (
-                <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
-                  <p className="text-red-800 font-medium">There was an error sending your message. Please try again.</p>
-                </div>
-              )}
-
-              {/* Submit Button */}
-              <button
-                type="submit"
-                disabled
-                className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                <Send size={20} />
-                {isSubmitting ? "Sending..." : "Send Message"}
-              </button>
-
-              <p className="text-xs text-muted-foreground text-center">* Required fields</p>
-            </form>
-          </div>
+                <p className="text-xs text-muted-foreground text-center">* Required fields</p>
+              </form>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* FAQ Section */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold mb-12">Frequently Asked Questions</h2>
+          <ScrollReveal animation="slide-up">
+            <h2 className="text-3xl font-bold mb-12">Frequently Asked Questions</h2>
+          </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
@@ -262,10 +270,12 @@ export default function ContactPage() {
                 a: "Contact us using the form above or reach out directly. We'll schedule an initial consultation to understand your needs.",
               },
             ].map((faq, idx) => (
-              <div key={idx} className="p-6 bg-muted border border-border rounded-lg">
-                <h4 className="font-semibold text-primary mb-3">{faq.q}</h4>
-                <p className="text-foreground/80 text-sm">{faq.a}</p>
-              </div>
+              <ScrollReveal key={idx} animation="slide-up" delay={idx * 50}>
+                <div className="p-6 bg-muted border border-border rounded-lg">
+                  <h4 className="font-semibold text-primary mb-3">{faq.q}</h4>
+                  <p className="text-foreground/80 text-sm">{faq.a}</p>
+                </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>

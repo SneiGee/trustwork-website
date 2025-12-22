@@ -144,7 +144,7 @@ export default function TrainingCoursesPage() {
 
       <div className="min-h-screen">
         {/* Full-Width Hero Section with Background */}
-        <section className="relative w-screen left-1/2 right-1/2 -mx-[50vw] h-[80vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+        <section className="relative w-screen left-1/2 right-1/2 -mx-[50vw] h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
           {/* Background Image with Overlay */}
           <div className="absolute inset-0 z-0">
             <img

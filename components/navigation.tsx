@@ -14,6 +14,7 @@ export function Navigation() {
     { href: "/about", label: "About Us" },
     { href: "/services", label: "Services" },
     { href: "/expertise", label: "Our Expertise" },
+    { href: "/project-finance-africa", label: "Project F Africa" },
     { href: "/contact", label: "Contact" },
   ]
 

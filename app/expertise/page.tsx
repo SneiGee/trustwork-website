@@ -76,10 +76,12 @@ export default function ExpertisePage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="bg-primary text-primary-foreground py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Expertise</h1>
-          <p className="text-xl text-primary-foreground/90 max-w-2xl">
+      <section className="relative w-screen left-1/2 right-1/2 -mx-[50vw] h-[400px] flex items-center justify-center">
+        <div className="absolute inset-0 bg-[url('/expert-professionals-consulting-team-africa.jpg')] bg-cover bg-center" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 to-primary/80" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">Our Expertise</h1>
+          <p className="text-xl text-white/90 max-w-2xl mx-auto">
             Expert capabilities across management, research, development, and strategic consulting
           </p>
         </div>

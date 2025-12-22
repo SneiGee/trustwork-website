@@ -51,6 +51,14 @@ export function Footer() {
                   Training Courses
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/project-finance-africa"
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  Project Finance Africa
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -84,7 +92,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/terms"
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
                   Terms & Conditions
